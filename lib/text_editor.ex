@@ -1,24 +1,8 @@
-# SurfaceRichComponents
+defmodule SurfaceRichComponents.TextEditor do
+  use Surface.Component
+  @moduledoc """
+  Headless rich text editor component.
 
-Collection of headless JS components for [SurfaceUI](https://surface-ui.org/)
-
-## Installation
-
-**Not available on Hex yet as the project is WIP
-
-Clone the Repo, point your `mix.ex` to the cloned repo:
-
-```elixir
-def deps do
-  [
-    {:surface_rich_components, path: "<path to the repo>"}
-  ]
-end
-```
-
-## Components
-
-### Rich Text Editor
   Wrapper around [tiptap editor](https://www.tiptap.dev/)
 
   To control the editor you need to create a toolbar section somewhere on your page.
@@ -26,7 +10,6 @@ end
   The section's `data-editor-toolbar` attribute value should be the same as the `name` attribute of the editor.
 
   Buttons inside the toolbar should have `data-editor-control` which value represent editor control.
-  **TODO: at this moment only `bold`, `italic`, and `h1` are implemented. More is coming shortly
 
   Example using with tailwindcss:
 
@@ -52,9 +35,31 @@ end
 
   </div>
 
-  ```
+  """
 
-### Select
 
-**TODO: not implemented yet
+  alias Surface.Components.Form.{FieldContext, HiddenInput}
 
+  @doc "Changeset field name"
+  prop name, :atom, required: true
+
+  @doc "Classes to apply to text area"
+  prop class, :string
+
+  @doc "Additional input options like `phx_debounce`"
+  prop opts, :keyword, default: []
+
+  @doc "the classes added to active buttons on the control toolbar"
+  prop btn_active_class, :string, default: "editor-active"
+
+  def render(assigns) do
+    ~F"""
+    <div :hook="TextEditor" id={"editor-#{@name}"} data-class={@class} data-btn-active-class={@btn_active_class}>
+      <div phx-update="ignore" data-editor={@name}></div>
+      <FieldContext name={@name}>
+        <HiddenInput opts={ [data_name: @name] ++ @opts } />
+      </FieldContext>
+    </div>
+    """
+  end
+end

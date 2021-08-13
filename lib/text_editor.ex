@@ -5,6 +5,8 @@ defmodule SurfaceRichComponents.TextEditor do
 
   Wrapper around [tiptap editor](https://www.tiptap.dev/)
 
+  **NOTE: You need to install `@tiptap/core` and `@tiptap/starter-kit` JS packages
+
   To control the editor you need to create a toolbar section somewhere on your page.
 
   The section's `data-editor-toolbar` attribute value should be the same as the `name` attribute of the editor.

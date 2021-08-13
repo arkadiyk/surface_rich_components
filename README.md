@@ -21,11 +21,14 @@ end
 ### Rich Text Editor
   Wrapper around [tiptap editor](https://www.tiptap.dev/)
 
+  **NOTE: You need to install `@tiptap/core` and `@tiptap/starter-kit` JS packages
+
   To control the editor you need to create a toolbar section somewhere on your page.
 
   The section's `data-editor-toolbar` attribute value should be the same as the `name` attribute of the editor.
 
   Buttons inside the toolbar should have `data-editor-control` which value represent editor control.
+
   **TODO: at this moment only `bold`, `italic`, and `h1` are implemented. More is coming shortly
 
   Example using with tailwindcss:

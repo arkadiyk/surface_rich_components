@@ -2,6 +2,8 @@
 
 Collection of headless JS components for [SurfaceUI](https://surface-ui.org/)
 
+Usage Examples with Tailwind CSS: https://github.com/arkadiyk/rich_components_demo
+
 ## Installation
 
 **Not available on Hex yet as the project is WIP

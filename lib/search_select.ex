@@ -1,4 +1,4 @@
-defmodule SurfaceRichComponents.Select do
+defmodule SurfaceRichComponents.SearchSelect do
   use Surface.Component
 
   alias Surface.Components.Form.{FieldContext, HiddenInput}
@@ -31,10 +31,12 @@ defmodule SurfaceRichComponents.Select do
       data-select-change={@select.name}
       data-focus-class={@focus_class}
     >
-      <button type="button" data-toggle-visibility aria-expanded="open" aria-haspopup="listbox" class={@outer_class}>
+      <div data-toggle-visibility aria-expanded="open" aria-haspopup="listbox" class={@outer_class}>
         <#slot name="selected_value" />
-        <#slot name="input" />
-      </button>
+        <div phx-update="ignore">
+          <#slot name="input" />
+        </div>
+      </div>
       <div data-list-container style="display: none;">
         <#slot name="dropdown" />
       </div>

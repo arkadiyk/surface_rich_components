@@ -1,5 +1,6 @@
 defmodule SurfaceRichComponents.TextEditor do
   use Surface.Component
+
   @moduledoc """
   Headless rich text editor component.
 
@@ -39,7 +40,6 @@ defmodule SurfaceRichComponents.TextEditor do
 
   """
 
-
   alias Surface.Components.Form.{FieldContext, HiddenInput}
 
   @doc "Changeset field name"
@@ -56,10 +56,15 @@ defmodule SurfaceRichComponents.TextEditor do
 
   def render(assigns) do
     ~F"""
-    <div :hook="TextEditor" id={"editor-#{@name}"} data-class={@class} data-btn-active-class={@btn_active_class}>
-      <div phx-update="ignore" data-editor={@name}></div>
+    <div
+      :hook="TextEditor"
+      id={"editor-#{@name}"}
+      data-class={@class}
+      data-btn-active-class={@btn_active_class}
+    >
+      <div phx-update="ignore" data-editor={@name} />
       <FieldContext name={@name}>
-        <HiddenInput opts={ [data_name: @name] ++ @opts } />
+        <HiddenInput opts={[data_name: @name] ++ @opts} />
       </FieldContext>
     </div>
     """

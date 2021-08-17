@@ -4,6 +4,11 @@ Collection of headless JS components for [SurfaceUI](https://surface-ui.org/)
 
 Usage Examples with Tailwind CSS: https://github.com/arkadiyk/rich_components_demo
 
+### Motivation
+
+Main reason I was going for SPA is availability of JavaScript components for Selects, TextEditors, Date and Time pickers, which are hard to implement for server side rendering without hacks.
+This project is trying fill this gap.
+
 ## Installation
 
 **Not available on Hex yet as the project is WIP
@@ -59,7 +64,24 @@ end
 
   ```
 
-### Select
+### SearchSelect
 
-**TODO: not implemented yet
+ The component provides JavaScript interactivity for server side rendered Select elements.
+ There are 3 required slots which represent
+ - `search` - **Search Input.** The slot is shown when user clicks on element or presses Enter. It triggers `filter` event every time the Input is updated. It is hidden when value is selected.
+ - `selected_value` - **Selected Value.** When value is selected it shown in the slot. It is hidden while *Search Input* and *Dropdown* are visible.
+ - `dropdown` - **Dropdown.** Appears when user click or press Enter on the component. Contains list of selectable elements.
+
+Each rendered slot has `"data-"` elements which are used to attach JavaScript events.
+
+- `data-select-input`  - Tags the `input` element inside the `search` slot.
+- `data-selected-value` - Tags an enclosing element for Selected Value.
+- `data-clear` - Tags an element click on which removes the selection
+- `data-select-value={value}` - Tags elements which contains selectable values in the `dropdown` slot. It will respond on _ArrowUp_, _ArrowDown_, _Enter_, and _Click_ events.
+
+The use-case for this component is to be base for Application Level SearchSelect Component which will contain styling and logic to render `dropdown` and `selected_value`
+
+Here is an example of this kind of component: https://github.com/arkadiyk/rich_components_demo/blob/master/lib/rich_components_demo_web/live/components/select_sector.ex
+
+
 

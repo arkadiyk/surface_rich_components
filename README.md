@@ -16,12 +16,10 @@ This project is trying fill this gap.
 
 **Not available on Hex yet as the project is WIP
 
-Clone the Repo, point your `mix.ex` to the cloned repo:
-
 ```elixir
 def deps do
   [
-    {:surface_rich_components, path: "<path to the repo>"}
+    {:surface_rich_components, git: "https://github.com/arkadiyk/surface_rich_components.git", branch: "main"}
   ]
 end
 ```

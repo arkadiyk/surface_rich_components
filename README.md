@@ -4,6 +4,9 @@ Collection of headless JS components for [SurfaceUI](https://surface-ui.org/)
 
 Usage Examples with Tailwind CSS: https://github.com/arkadiyk/rich_components_demo
 
+Demo: https://rich-components-demo.gigalixirapp.com/
+
+
 ### Motivation
 
 Main reason I was going for SPA is availability of JavaScript components for Selects, TextEditors, Date and Time pickers, which are hard to implement for server side rendering without hacks.

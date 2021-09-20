@@ -23,7 +23,16 @@ def deps do
 end
 ```
 
+## Coming soon
+
+### - Multiselect
+
+### - Date and Time dropdown
+
+### - Infinite Scroll
+
 ## Components
+
 
 ### Rich Text Editor
   Wrapper around [tiptap editor](https://www.tiptap.dev/)

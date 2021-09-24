@@ -33,8 +33,10 @@ defmodule SurfaceRichComponents.SearchSelect do
   """
   slot dropdown, required: true
 
+  @doc "Class for arrow selected rows"
   prop focus_class, :string
-  prop outer_class, :string
+
+  prop class, :css_class
 
   @spec render(any) :: Phoenix.LiveView.Rendered.t()
   def render(assigns) do
@@ -48,7 +50,7 @@ defmodule SurfaceRichComponents.SearchSelect do
       data-select-change={@select.name}
       data-focus-class={@focus_class}
     >
-      <div data-toggle-visibility aria-expanded="open" aria-haspopup="listbox" class={@outer_class}>
+      <div data-toggle-visibility aria-expanded="open" aria-haspopup="listbox" class={@class}>
         <#slot name="selected_value" />
         <div phx-update="ignore">
           <#slot name="search" />

@@ -6,11 +6,17 @@ Usage Examples with Tailwind CSS: https://github.com/arkadiyk/rich_components_de
 
 Demo: https://rich-components-demo.gigalixirapp.com/
 
+This project is basically a POC at this point. Hopefully one day it will become a comprehensive useful library.
+
 
 ### Motivation
 
 Main reason I was going for SPA is availability of JavaScript components for Selects, TextEditors, Date and Time pickers, which are hard to implement for server side rendering without hacks.
 This project is trying fill this gap.
+
+The problem with all JS data components in a server rendered app is how to pass data into the JS component. It's possible but not practical for large amount of data. This is the reason I cannot use any of the JS dropdowns like `Select2` in my LV app.
+
+The approach I am taking here is to keep all the data management like retrieval, pagination, etc on the server side. JS part is to add rich functionality to server rendered data. The server provides hooks for JS using HTML data- attributes.
 
 ## Installation
 
